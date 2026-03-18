@@ -1,0 +1,86 @@
+// index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduardo Wachter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Eduardo Wachter</h1>
+    <p>Ciência da Computação | Desenvolvimento | Dados</p>
+  </header>
+
+  <nav class="nav">
+    <button onclick="showTab('timeline')">Linha de Evolução</button>
+    <button onclick="showTab('skills')">Competências</button>
+  </nav>
+
+  <main>
+    <section id="timeline" class="tab active">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>PUCRS</h3>
+            <p>Ciência da Computação</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>Escola Técnica Mesquita</h3>
+            <p>Técnico em Informática (Programação)</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>Ensino Fundamental e Médio</h3>
+            <p>Anchieta até 6º ano e Pastor Dohms</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="tab">
+      <div class="grid">
+        <div class="card">
+          <h2>Linguagens</h2>
+          <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>C</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Competências</h2>
+          <ul>
+            <li>Lógica de Programação</li>
+            <li>Desenvolvimento de Software</li>
+            <li>Modelagem de Dados</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Ferramentas</h2>
+          <ul>
+            <li>Jedox (BI)</li>
+            <li>Kissflow (Processos)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
