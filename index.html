@@ -3,93 +3,351 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eduardo Wachter</title>
+  <title>Eduardo Wachter — Dev & Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- Background grid + orbs -->
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
   <header class="header">
-    <h1>Eduardo Wachter</h1>
-    <p>Ciência da Computação | Desenvolvimento | Dados</p>
+    <div class="header-inner">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Disponível para oportunidades
+      </div>
+      <h1 class="hero-name">Eduardo<br><span class="accent">Wachter</span></h1>
+      <p class="hero-sub">
+        <span class="mono">&gt; </span>
+        <span id="typed"></span><span class="cursor">|</span>
+      </p>
+      <div class="header-tags">
+        <span class="tag">Ciência da Computação</span>
+        <span class="tag">Desenvolvimento</span>
+        <span class="tag">Dados</span>
+      </div>
+    </div>
   </header>
 
   <nav class="nav">
-    <button onclick="showTab('timeline')">Linha de Evolução</button>
-    <button onclick="showTab('skills')">Competências</button>
+    <button class="nav-btn active" onclick="showTab('timeline', this)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Linha de Evolução
+    </button>
+    <button class="nav-btn" onclick="showTab('skills', this)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      Competências
+    </button>
   </nav>
 
   <main>
+
+    <!-- TIMELINE -->
     <section id="timeline" class="tab active">
-      <div class="timeline">
+      <div class="timeline-container">
 
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <div class="content expand">
-            <h3>PUCRS</h3>
-            <p>Ciência da Computação</p>
-            <div class="extra">
-              <p>Foco em algoritmos, estrutura de dados e desenvolvimento de software.</p>
-              <img src="https://www.tecmundo.com.br/software/2082-o-que-e-algoritmo-.htm" />
+        <!-- PUCRS -->
+        <div class="tl-item" data-index="0">
+          <div class="tl-left">
+            <div class="tl-year">2023 —</div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card" onclick="toggleCard(this)">
+            <div class="tl-card-header">
+              <div class="tl-institution-badge pucrs">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <div class="tl-header-text">
+                <h3>PUCRS</h3>
+                <p class="tl-role">Ciência da Computação</p>
+              </div>
+              <div class="tl-toggle-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div class="tl-card-body">
+              <p class="tl-summary">Graduação com foco em fundamentos sólidos da computação, algoritmos e engenharia de software.</p>
+              <div class="tl-sections">
+                <div class="tl-section challenges">
+                  <div class="tl-section-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    Desafios
+                  </div>
+                  <ul>
+                    <li>Dominar estruturas de dados complexas e análise de algoritmos de alta complexidade</li>
+                    <li>Transitar entre paradigmas — imperativo, orientado a objetos e funcional</li>
+                    <li>Gerenciar projetos em equipe com prazos e entregas reais</li>
+                    <li>Conectar teoria acadêmica com aplicações práticas do mercado</li>
+                  </ul>
+                </div>
+                <div class="tl-section learnings">
+                  <div class="tl-section-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    Aprendizados
+                  </div>
+                  <ul>
+                    <li>Pensamento computacional rigoroso e resolução estruturada de problemas</li>
+                    <li>Fundamentos que sustentam qualquer tecnologia ou linguagem</li>
+                    <li>Trabalho colaborativo com Git, metodologias ágeis e documentação técnica</li>
+                    <li>Visão sistêmica sobre arquitetura de software e banco de dados</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <div class="content expand">
-            <h3>Escola Técnica Mesquita</h3>
-            <p>Técnico em Informática (Programação)</p>
-            <div class="extra">
-              <p>Base sólida em lógica, programação e primeiros projetos práticos.</p>
-              <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" />
+        <!-- Escola Técnica Mesquita -->
+        <div class="tl-item" data-index="1">
+          <div class="tl-left">
+            <div class="tl-year">2021 —</div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card" onclick="toggleCard(this)">
+            <div class="tl-card-header">
+              <div class="tl-institution-badge mesquita">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <div class="tl-header-text">
+                <h3>Escola Técnica Mesquita</h3>
+                <p class="tl-role">Técnico em Informática — Programação</p>
+              </div>
+              <div class="tl-toggle-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div class="tl-card-body">
+              <p class="tl-summary">Formação técnica que revelou a paixão pela programação e deu os primeiros passos práticos na área.</p>
+              <div class="tl-sections">
+                <div class="tl-section challenges">
+                  <div class="tl-section-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    Desafios
+                  </div>
+                  <ul>
+                    <li>Primeiro contato real com lógica de programação — aprender a pensar como máquina</li>
+                    <li>Desenvolver projetos práticos do zero sem experiência prévia</li>
+                    <li>Compreender hardware, redes e camadas de infraestrutura</li>
+                    <li>Equilibrar o curso técnico com o ensino médio regular</li>
+                  </ul>
+                </div>
+                <div class="tl-section learnings">
+                  <div class="tl-section-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    Aprendizados
+                  </div>
+                  <ul>
+                    <li>Base sólida em lógica de programação e construção de algoritmos</li>
+                    <li>Descoberta da vocação — confirmou que tecnologia é o caminho</li>
+                    <li>Disciplina técnica e método para aprender ferramentas novas</li>
+                    <li>Primeiros projetos reais: sites, scripts e aplicações simples</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="dot"></div>
-          <div class="content">
-            <h3>Ensino Fundamental e Médio</h3>
-            <p>Anchieta até 6º ano e Pastor Dohms</p>
+        <!-- Ensino Fundamental e Médio -->
+        <div class="tl-item" data-index="2">
+          <div class="tl-left">
+            <div class="tl-year">2010 —</div>
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card" onclick="toggleCard(this)">
+            <div class="tl-card-header">
+              <div class="tl-institution-badge schools">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              </div>
+              <div class="tl-header-text">
+                <h3>Anchieta + Pastor Dohms</h3>
+                <p class="tl-role">Ensino Fundamental e Médio</p>
+              </div>
+              <div class="tl-toggle-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+            </div>
+            <div class="tl-card-body">
+              <p class="tl-summary">Os anos de formação que plantaram a curiosidade e a disciplina que moldam o profissional de hoje.</p>
+              <div class="tl-sections">
+                <div class="tl-section challenges">
+                  <div class="tl-section-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    Desafios
+                  </div>
+                  <ul>
+                    <li>Descobrir uma vocação no meio de tantas possibilidades</li>
+                    <li>Desenvolver disciplina e constância nos estudos a longo prazo</li>
+                    <li>Transição entre escolas e adaptação a novos ambientes e amigos</li>
+                  </ul>
+                </div>
+                <div class="tl-section learnings">
+                  <div class="tl-section-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    Aprendizados
+                  </div>
+                  <ul>
+                    <li>Curiosidade intelectual e amor por resolver problemas</li>
+                    <li>Trabalho em equipe, responsabilidade e organização</li>
+                    <li>Base educacional ampla que alimenta o raciocínio analítico</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" class="tab">
-      <div class="grid">
-        <div class="card glow">
-          <h2>Linguagens</h2>
-          <ul>
-            <li>Java</li>
-            <li>Python</li>
-            <li>PHP</li>
-            <li>C</li>
-          </ul>
+
+      <div class="skills-section-title">
+        <span class="mono">// </span>Linguagens
+      </div>
+
+      <div class="lang-grid">
+
+        <div class="lang-card" style="--clr:#f89820;--delay:0s">
+          <div class="lang-icon-wrap">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/java/java-original.svg" alt="Java" class="lang-icon">
+            <div class="lang-ring"></div>
+          </div>
+          <div class="lang-info">
+            <h3>Java</h3>
+            <p>OOP · Backend · APIs REST</p>
+            <div class="lang-bar"><div class="lang-bar-fill" style="--w:78%"></div></div>
+          </div>
+          <div class="lang-particles">
+            <span></span><span></span><span></span>
+          </div>
         </div>
 
-        <div class="card glow">
-          <h2>Competências</h2>
-          <ul>
-            <li>Lógica de Programação</li>
-            <li>Desenvolvimento de Software</li>
-            <li>Modelagem de Dados</li>
-          </ul>
+        <div class="lang-card" style="--clr:#3572A5;--delay:.1s">
+          <div class="lang-icon-wrap">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/python/python-original.svg" alt="Python" class="lang-icon">
+            <div class="lang-ring"></div>
+          </div>
+          <div class="lang-info">
+            <h3>Python</h3>
+            <p>Data Analysis · Scripts · Automação</p>
+            <div class="lang-bar"><div class="lang-bar-fill" style="--w:82%"></div></div>
+          </div>
+          <div class="lang-particles">
+            <span></span><span></span><span></span>
+          </div>
         </div>
 
-        <div class="card glow">
-          <h2>Ferramentas</h2>
-          <ul>
-            <li>Jedox (BI)</li>
-            <li>Kissflow (Processos)</li>
-          </ul>
+        <div class="lang-card" style="--clr:#777BB4;--delay:.2s">
+          <div class="lang-icon-wrap">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/php/php-original.svg" alt="PHP" class="lang-icon">
+            <div class="lang-ring"></div>
+          </div>
+          <div class="lang-info">
+            <h3>PHP</h3>
+            <p>Web · Backend · CMS</p>
+            <div class="lang-bar"><div class="lang-bar-fill" style="--w:65%"></div></div>
+          </div>
+          <div class="lang-particles">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <div class="lang-card" style="--clr:#5C6BC0;--delay:.3s">
+          <div class="lang-icon-wrap">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/c/c-original.svg" alt="C" class="lang-icon">
+            <div class="lang-ring"></div>
+          </div>
+          <div class="lang-info">
+            <h3>C</h3>
+            <p>Sistemas · Algoritmos · Ponteiros</p>
+            <div class="lang-bar"><div class="lang-bar-fill" style="--w:60%"></div></div>
+          </div>
+          <div class="lang-particles">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="skills-section-title" style="margin-top:3rem">
+        <span class="mono">// </span>Competências Técnicas
+      </div>
+
+      <div class="competencies-grid">
+
+        <div class="comp-card">
+          <div class="comp-icon" style="--c:#60a5fa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4>Lógica de Programação</h4>
+          <p>Resolução estruturada de problemas, algoritmos e raciocínio computacional</p>
+          <div class="comp-tags"><span>Algoritmos</span><span>Estruturas de Dados</span><span>Recursão</span></div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-icon" style="--c:#a78bfa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/><path d="M7 8l3 3-3 3"/><path d="M13 14h4"/></svg>
+          </div>
+          <h4>Desenvolvimento de Software</h4>
+          <p>Construção de aplicações robustas com boas práticas e arquitetura limpa</p>
+          <div class="comp-tags"><span>APIs REST</span><span>Git</span><span>Clean Code</span></div>
+        </div>
+
+        <div class="comp-card">
+          <div class="comp-icon" style="--c:#34d399">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h4>Modelagem de Dados</h4>
+          <p>Design de bancos de dados relacionais, normalização e consultas otimizadas</p>
+          <div class="comp-tags"><span>SQL</span><span>ER Diagram</span><span>Normalização</span></div>
+        </div>
+
+      </div>
+
+      <div class="skills-section-title" style="margin-top:3rem">
+        <span class="mono">// </span>Ferramentas
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div>
+            <h4>Jedox</h4>
+            <p>Business Intelligence & Planning</p>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h4>Kissflow</h4>
+            <p>Automação de Processos de Negócio</p>
+          </div>
         </div>
       </div>
+
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="mono">eduardo.wachter</span>
+      <span class="footer-sep">·</span>
+      <span>Porto Alegre, RS</span>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
